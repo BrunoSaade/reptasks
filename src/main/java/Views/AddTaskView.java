@@ -146,6 +146,9 @@ public class AddTaskView extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        addButton.setOpaque(true);
+        addButton.setBorderPainted(false);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(

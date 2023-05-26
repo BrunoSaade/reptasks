@@ -16,7 +16,6 @@ public class MyTasksController {
     
     public MyTasksController(RepublicController republicController) {
         this.republicController = republicController;
-        this.tasksView = new MyTasksView(this);
     }
     
     public void view() {

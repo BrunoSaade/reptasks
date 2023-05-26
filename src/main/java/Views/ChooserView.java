@@ -96,6 +96,9 @@ public class ChooserView extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        createRepublicButton.setOpaque(true);
+        createRepublicButton.setBorderPainted(false);
+
         enterRepublicPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Entrar em República"));
 
         enterNameRepublicField.setBorder(javax.swing.BorderFactory.createTitledBorder("Nome da República"));
@@ -136,6 +139,9 @@ public class ChooserView extends javax.swing.JFrame {
                 .addComponent(enterREpublicButton)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        enterREpublicButton.setOpaque(true);
+        enterREpublicButton.setBorderPainted(false);
 
         javax.swing.GroupLayout contentPanelLayout = new javax.swing.GroupLayout(contentPanel);
         contentPanel.setLayout(contentPanelLayout);

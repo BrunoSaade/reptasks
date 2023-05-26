@@ -168,6 +168,9 @@ public class EditTaskView extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        editButton.setOpaque(true);
+        editButton.setBorderPainted(false);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(

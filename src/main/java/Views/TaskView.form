@@ -171,6 +171,9 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="doneTaskButtonActionPerformed"/>
           </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="doneTaskButton.setOpaque(true);&#xa;doneTaskButton.setBorderPainted(false);"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JSeparator" name="separator2">
         </Component>
@@ -236,6 +239,9 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sendFeedbackButtonActionPerformed"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="sendFeedbackButton.setOpaque(true);&#xa;sendFeedbackButton.setBorderPainted(false);"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JSpinner" name="scoreSpinner">
               <Properties>
@@ -284,6 +290,9 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="editFeedbackButtonActionPerformed"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="editFeedbackButton.setOpaque(true);&#xa;editFeedbackButton.setBorderPainted(false);"/>
+              </AuxValues>
             </Component>
           </SubComponents>
         </Container>

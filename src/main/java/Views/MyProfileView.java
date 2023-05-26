@@ -174,6 +174,9 @@ public class MyProfileView extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        saveButton.setOpaque(true);
+        saveButton.setBorderPainted(false);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(

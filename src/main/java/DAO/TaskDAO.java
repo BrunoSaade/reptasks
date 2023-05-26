@@ -173,7 +173,7 @@ public class TaskDAO extends Database {
 
             userUuid.setType("uuid");
             userUuid.setValue(taskModel.getUserUuid().toString());
-
+            
             this.preparedStatement = this.connection.prepareStatement("UPDATE Tasks SET title = ?, description = ?, republic_uuid = ?, user_uuid = ?, expires_at = ?, updated_at = ?, is_done = ? WHERE uuid = ?");
             this.preparedStatement.setString(1, taskModel.getTitle());
             this.preparedStatement.setString(2, taskModel.getDescription());
@@ -181,7 +181,7 @@ public class TaskDAO extends Database {
             this.preparedStatement.setObject(4, userUuid);
             this.preparedStatement.setTimestamp(5, Timestamp.valueOf(taskModel.getExpiresAt()));
             this.preparedStatement.setTimestamp(6, updatedAt);
-            this.preparedStatement.setBoolean(7, taskModel.getIsDone());
+            this.preparedStatement.setInt(7, taskModel.getIsDone() ? 1 : 0);
             this.preparedStatement.setObject(8, taskUuid);
             int result = this.preparedStatement.executeUpdate();
 

@@ -44,7 +44,7 @@ public class RepublicView extends javax.swing.JFrame {
     }
     
     public void setRepublic() {
-        //this.myTasksButton.setEnabled(true);
+//        this.myTasksButton.setEnabled(true);
     }
     
     public void setScore(double score) {
@@ -79,6 +79,7 @@ public class RepublicView extends javax.swing.JFrame {
         DefaultTableModel taskTableModel = (DefaultTableModel) this.tasksTable.getModel();
         taskTableModel.setRowCount(0);
         for (TaskModel taskModel : this.tasksModel) {
+//            System.out.println(taskModel);
             String name = "-";
             
             UUID userUuid = taskModel.getUserUuid();
@@ -294,6 +295,15 @@ public class RepublicView extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        openTaskButton.setOpaque(true);
+        openTaskButton.setBorderPainted(false);
+        editTaskButton.setOpaque(true);
+        editTaskButton.setBorderPainted(false);
+        deleteTaskButton.setOpaque(true);
+        deleteTaskButton.setBorderPainted(false);
+        addTaskButton.setOpaque(true);
+        addTaskButton.setBorderPainted(false);
+
         usersPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Usuários"));
 
         usersTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -378,6 +388,11 @@ public class RepublicView extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        openUserButton.setOpaque(true);
+        openUserButton.setBorderPainted(false);
+        removeUserButton.setOpaque(true);
+        removeUserButton.setBorderPainted(false);
+
         outRepublicButton.setBackground(new java.awt.Color(176, 80, 82));
         outRepublicButton.setForeground(new java.awt.Color(255, 255, 255));
         outRepublicButton.setText("Sair da República");
@@ -412,6 +427,9 @@ public class RepublicView extends javax.swing.JFrame {
                 .addComponent(usersPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
+
+        outRepublicButton.setOpaque(true);
+        outRepublicButton.setBorderPainted(false);
 
         menuPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Menu"));
 
@@ -483,7 +501,7 @@ public class RepublicView extends javax.swing.JFrame {
                 .addComponent(myProfileButton)
                 .addGap(18, 18, 18)
                 .addComponent(republicButton)
-                .addGap(18, 18, 18)
+                .addGap(54, 54, 54)
                 .addComponent(myProfileButton2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(logoutButton)

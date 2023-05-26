@@ -108,7 +108,7 @@ public class RepublicController {
         this.feedbackDAO = new FeedbackDAO();
         this.addTaskView = new AddTaskView(this);
         this.editTaskView = new EditTaskView(this);
-
+        
 
         this.chooserView = new ChooserView(this);
         this.republicView.invisibleContentPanel();

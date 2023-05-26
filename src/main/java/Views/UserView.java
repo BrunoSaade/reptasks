@@ -106,6 +106,9 @@ public class UserView extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        viewFeedbackButton2.setOpaque(true);
+        viewFeedbackButton2.setBorderPainted(false);
+
         nameLabel.setText("Nome");
         nameLabel.setBorder(javax.swing.BorderFactory.createTitledBorder("Nome"));
 

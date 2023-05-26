@@ -214,6 +214,9 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="openTaskButtonActionPerformed"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="openTaskButton.setOpaque(true);&#xa;openTaskButton.setBorderPainted(false);"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JTextField" name="searchTaskField">
               <Events>
@@ -241,6 +244,9 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="editTaskButtonActionPerformed"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="editTaskButton.setOpaque(true);&#xa;editTaskButton.setBorderPainted(false);"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JButton" name="deleteTaskButton">
               <Properties>
@@ -255,6 +261,9 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deleteTaskButtonActionPerformed"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="deleteTaskButton.setOpaque(true);&#xa;deleteTaskButton.setBorderPainted(false);"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JButton" name="addTaskButton">
               <Properties>
@@ -269,6 +278,9 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addTaskButtonActionPerformed"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="addTaskButton.setOpaque(true);&#xa;addTaskButton.setBorderPainted(false);"/>
+              </AuxValues>
             </Component>
           </SubComponents>
         </Container>
@@ -379,6 +391,9 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="openUserButtonActionPerformed"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="openUserButton.setOpaque(true);&#xa;openUserButton.setBorderPainted(false);"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JTextField" name="searchUserField">
             </Component>
@@ -403,6 +418,9 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="removeUserButtonActionPerformed"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="removeUserButton.setOpaque(true);&#xa;removeUserButton.setBorderPainted(false);"/>
+              </AuxValues>
             </Component>
           </SubComponents>
         </Container>
@@ -419,6 +437,9 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="outRepublicButtonActionPerformed"/>
           </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="outRepublicButton.setOpaque(true);&#xa;outRepublicButton.setBorderPainted(false);"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>
@@ -462,7 +483,7 @@
                   <Component id="myProfileButton" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="republicButton" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
                   <Component id="myProfileButton2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="logoutButton" min="-2" max="-2" attributes="0"/>

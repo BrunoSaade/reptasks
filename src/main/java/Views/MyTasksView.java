@@ -5,21 +5,63 @@
 package Views;
 
 import Controllers.MyTasksController;
+import Controllers.RepublicController;
+import Models.TaskModel;
+import Models.UserModel;
+import java.util.ArrayList;
+import java.util.UUID;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author gabri
  */
 public class MyTasksView extends javax.swing.JFrame {
+    private RepublicController republicController;
     private MyTasksController tasksController;
+    private ArrayList<TaskModel> tasksModel;
     /**
      * Creates new form MyTasksView
      */
-    public MyTasksView(MyTasksController tasksController) {
-        this.tasksController = tasksController;
+    public MyTasksView(RepublicController republicController) {
+//        this.tasksController = tasksController;
+        System.out.println("kkkkk");
         initComponents();
     }
+    
+    public void test() {
+        System.out.println("uahuahuahua");
+    }
 
+    public void load() {
+        System.out.println("load ok");
+//        DefaultTableModel taskTableModel = (DefaultTableModel) this.tasksTable.getModel();
+//        taskTableModel.setRowCount(0);
+//        for (TaskModel taskModel : this.tasksModel) {
+//            System.out.println(taskModel);
+//            String name = "-";
+//            
+//            UUID userUuid = taskModel.getUserUuid();
+//            
+//            if (userUuid != null) {
+//                UserModel userData = this.republicController.findUserByUuid(userUuid.toString());
+//                if (userData != null) {
+//                    name = userData.getName();
+//                }
+//            }
+//            
+//            String done = "A Fazer";
+//            
+//            if (taskModel.getIsDone()) {
+//                done = "Feito";
+//            }
+//            
+//            Object[] row = {
+//                taskModel.getTitle(), name, done, taskModel.getExpiresAt(), taskModel.getUuid().toString(),
+//            };
+//            taskTableModel.addRow(row);
+//        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

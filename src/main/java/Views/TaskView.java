@@ -223,6 +223,11 @@ public class TaskView extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        sendFeedbackButton.setOpaque(true);
+        sendFeedbackButton.setBorderPainted(false);
+        editFeedbackButton.setOpaque(true);
+        editFeedbackButton.setBorderPainted(false);
+
         javax.swing.GroupLayout contentPanelLayout = new javax.swing.GroupLayout(contentPanel);
         contentPanel.setLayout(contentPanelLayout);
         contentPanelLayout.setHorizontalGroup(
@@ -269,6 +274,9 @@ public class TaskView extends javax.swing.JFrame {
                 .addComponent(feedbackPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
+
+        doneTaskButton.setOpaque(true);
+        doneTaskButton.setBorderPainted(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
