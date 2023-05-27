@@ -6,11 +6,13 @@ package Views;
 
 import Controllers.MyTasksController;
 import Controllers.RepublicController;
+import Models.FeedbackModel;
 import Models.TaskModel;
 import Models.UserModel;
 import java.util.ArrayList;
 import java.util.UUID;
 import javax.swing.table.DefaultTableModel;
+
 
 /**
  *
@@ -18,50 +20,43 @@ import javax.swing.table.DefaultTableModel;
  */
 public class MyTasksView extends javax.swing.JFrame {
     private RepublicController republicController;
-    private MyTasksController tasksController;
+    private MyTasksController myTasksController;
     private ArrayList<TaskModel> tasksModel;
+    private UserModel userModel;
+    
+    public void load() {
+        DefaultTableModel taskTableModel = (DefaultTableModel) this.tasksTable.getModel();
+        taskTableModel.setRowCount(0);
+        for (TaskModel taskModel : this.tasksModel) {
+            String name = "-";
+            System.out.println(taskModel.getTitle());
+           
+            String done = "A Fazer";
+            
+            if (taskModel.getIsDone()) {
+                done = "Feito";
+            }
+            
+            Object[] row = {
+                taskModel.getTitle(), done, taskModel.getExpiresAt(),
+            };
+            taskTableModel.addRow(row);
+            
+        }
+    }
+    
     /**
-     * Creates new form MyTasksView
+     * Creates new form MyProfileView
      */
-    public MyTasksView(RepublicController republicController) {
-//        this.tasksController = tasksController;
-        System.out.println("kkkkk");
+    public MyTasksView(MyTasksController myTasksController) {
+        this.myTasksController = myTasksController;
         initComponents();
     }
     
-    public void test() {
-        System.out.println("uahuahuahua");
+    public void setTasks(ArrayList<TaskModel> tasksModel) {
+        this.tasksModel = tasksModel;
     }
 
-    public void load() {
-        System.out.println("load ok");
-//        DefaultTableModel taskTableModel = (DefaultTableModel) this.tasksTable.getModel();
-//        taskTableModel.setRowCount(0);
-//        for (TaskModel taskModel : this.tasksModel) {
-//            System.out.println(taskModel);
-//            String name = "-";
-//            
-//            UUID userUuid = taskModel.getUserUuid();
-//            
-//            if (userUuid != null) {
-//                UserModel userData = this.republicController.findUserByUuid(userUuid.toString());
-//                if (userData != null) {
-//                    name = userData.getName();
-//                }
-//            }
-//            
-//            String done = "A Fazer";
-//            
-//            if (taskModel.getIsDone()) {
-//                done = "Feito";
-//            }
-//            
-//            Object[] row = {
-//                taskModel.getTitle(), name, done, taskModel.getExpiresAt(), taskModel.getUuid().toString(),
-//            };
-//            taskTableModel.addRow(row);
-//        }
-    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -77,30 +72,21 @@ public class MyTasksView extends javax.swing.JFrame {
         openTaskButton = new javax.swing.JButton();
         searchField = new javax.swing.JTextField();
         searchButton = new javax.swing.JButton();
-        menuPanel = new javax.swing.JPanel();
-        logoLabel = new javax.swing.JLabel();
-        myTasksButton = new javax.swing.JButton();
-        myProfileButton = new javax.swing.JButton();
-        logoutButton = new javax.swing.JButton();
-        isLoggedInLabel = new javax.swing.JLabel();
-        scoreLabel = new javax.swing.JLabel();
-        tasksDoneLabel = new javax.swing.JLabel();
-        republicButton = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
         contentPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Minhas Tarefas"));
 
         tasksTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Tarefa", "Usuário", "Estado", "Expiração"
+                "Tarefa", "Estado", "Expiração"
             }
         ));
         scrollPanel.setViewportView(tasksTable);
@@ -108,6 +94,11 @@ public class MyTasksView extends javax.swing.JFrame {
         openTaskButton.setText("Abrir Tarefa");
 
         searchButton.setText("Pesquisar");
+        searchButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout contentPanelLayout = new javax.swing.GroupLayout(contentPanel);
         contentPanel.setLayout(contentPanelLayout);
@@ -122,7 +113,7 @@ public class MyTasksView extends javax.swing.JFrame {
                         .addGap(15, 15, 15)
                         .addComponent(searchField, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(searchButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(searchButton, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         contentPanelLayout.setVerticalGroup(
@@ -132,84 +123,11 @@ public class MyTasksView extends javax.swing.JFrame {
                 .addGroup(contentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(contentPanelLayout.createSequentialGroup()
                         .addComponent(openTaskButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(0, 35, Short.MAX_VALUE))
                     .addComponent(searchField, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(searchButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(scrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
-        menuPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Menu"));
-
-        logoLabel.setFont(new java.awt.Font("Agency FB", 1, 48)); // NOI18N
-        logoLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        logoLabel.setText("REPTASKS");
-
-        myTasksButton.setText("Minhas Tarefas");
-        myTasksButton.setEnabled(false);
-
-        myProfileButton.setText("Meu Perfil");
-        myProfileButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                myProfileButtonActionPerformed(evt);
-            }
-        });
-
-        logoutButton.setText("Sair");
-
-        isLoggedInLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        isLoggedInLabel.setText("Usuário");
-
-        scoreLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        scoreLabel.setText("Score: x.xx");
-
-        tasksDoneLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        tasksDoneLabel.setText("Tarefas: [x / x]");
-
-        republicButton.setText("República");
-        republicButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                republicButtonActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout menuPanelLayout = new javax.swing.GroupLayout(menuPanel);
-        menuPanel.setLayout(menuPanelLayout);
-        menuPanelLayout.setHorizontalGroup(
-            menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(menuPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(isLoggedInLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(logoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE)
-                    .addComponent(myTasksButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(myProfileButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(logoutButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(scoreLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(tasksDoneLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(republicButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        menuPanelLayout.setVerticalGroup(
-            menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(menuPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(logoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(isLoggedInLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(scoreLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tasksDoneLabel)
-                .addGap(24, 24, 24)
-                .addComponent(myProfileButton)
-                .addGap(18, 18, 18)
-                .addComponent(republicButton)
-                .addGap(18, 18, 18)
-                .addComponent(myTasksButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(logoutButton)
                 .addContainerGap())
         );
 
@@ -219,8 +137,6 @@ public class MyTasksView extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(menuPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(contentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -228,38 +144,23 @@ public class MyTasksView extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(menuPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(contentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(contentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void republicButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_republicButtonActionPerformed
-        this.tasksController.republicView();
-    }//GEN-LAST:event_republicButtonActionPerformed
-
-    private void myProfileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myProfileButtonActionPerformed
-        this.tasksController.openProfile();
-    }//GEN-LAST:event_myProfileButtonActionPerformed
+    private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_searchButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel contentPanel;
-    private javax.swing.JLabel isLoggedInLabel;
-    private javax.swing.JLabel logoLabel;
-    private javax.swing.JButton logoutButton;
-    private javax.swing.JPanel menuPanel;
-    private javax.swing.JButton myProfileButton;
-    private javax.swing.JButton myTasksButton;
     private javax.swing.JButton openTaskButton;
-    private javax.swing.JButton republicButton;
-    private javax.swing.JLabel scoreLabel;
     private javax.swing.JScrollPane scrollPanel;
     private javax.swing.JButton searchButton;
     private javax.swing.JTextField searchField;
-    private javax.swing.JLabel tasksDoneLabel;
     private javax.swing.JTable tasksTable;
     // End of variables declaration//GEN-END:variables
 }

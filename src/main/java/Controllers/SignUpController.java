@@ -20,6 +20,7 @@ public class SignUpController {
     private SignInController signInController;
     private SignUpView signUpView;
     private UserDAO userDAO;
+    public boolean caduser = false;
     
     public SignUpController(SignInController signInController) {
         this.signInController = signInController;
@@ -49,18 +50,21 @@ public class SignUpController {
          if (user != null) {
             JOptionPane.showMessageDialog(null, "Usuário existente!", "Cadastro", JOptionPane.ERROR_MESSAGE);
             this.signUpView.handleEmptyFields("username");
+            caduser = false;
             return;
         }
         
         if (!confirmPassword.equals(password)) {
             JOptionPane.showMessageDialog(null, "Senha de confirmação não coincide com a senha", "Cadastro", JOptionPane.ERROR_MESSAGE);
             this.signUpView.handleEmptyFields("password");
+            caduser = false;
             return;
         }
         
         if (!Pattern.matches(regex, password)) {
             JOptionPane.showMessageDialog(null, "Senha não atende os critérios!", "Cadastro", JOptionPane.ERROR_MESSAGE);
             this.signUpView.handleEmptyFields("password");
+            caduser = false;
             return;
         }
        
@@ -73,10 +77,12 @@ public class SignUpController {
         
         if (this.userDAO.create(user)) {
             JOptionPane.showMessageDialog(null, "Conta criada com sucesso!", "Cadastro", JOptionPane.INFORMATION_MESSAGE);
+            caduser = true;
             this.toSignIn();
         } else {
             JOptionPane.showMessageDialog(null, "Não foi possível criar a conta!", "Cadastro", JOptionPane.ERROR_MESSAGE);
-        }
+            caduser = false;
+        }   
         
         return;
     }   

@@ -49,7 +49,6 @@ public class TaskDAO extends Database {
                 task.setRepublicUuid(this.resultSet.getString("republic_uuid"));
                 task.setUserUuid(this.resultSet.getString("user_uuid"));
                 tasks.add(task);
-                System.out.println("Chegou!");
             }
         } catch (SQLException error) {
             System.out.println(error.getMessage());
@@ -254,6 +253,39 @@ public class TaskDAO extends Database {
             return false;
         } finally {
             return true;
+        }
+    }
+    
+    public ArrayList<TaskModel> getAllTasksOfUser(String userUuid) {
+        ArrayList<TaskModel> tasks = new ArrayList<>();
+        try {
+            this.preparedStatement = this.connection.prepareStatement("SELECT * FROM tasks WHERE user_uuid = ?");
+            PGobject userUuidObject = new PGobject();
+            userUuidObject.setType("uuid");
+            userUuidObject.setValue(userUuid);
+            this.preparedStatement.setObject(1, userUuidObject);
+            this.resultSet = this.preparedStatement.executeQuery();
+            
+            while (this.resultSet.next()) {
+                TaskModel taskModel = new TaskModel();
+                taskModel.setUuid(this.resultSet.getString("uuid"));
+                taskModel.setTitle(this.resultSet.getString("title"));
+                taskModel.setDescription(this.resultSet.getString("description"));
+                taskModel.setCreatedAt(this.resultSet.getTimestamp("created_at").toLocalDateTime());
+                Timestamp updatedAt = this.resultSet.getTimestamp("updated_at");
+                taskModel.setExpiresAt(this.resultSet.getTimestamp("expires_at").toLocalDateTime());
+                if (updatedAt != null) {
+                    taskModel.setUpdatedAt(updatedAt.toLocalDateTime());
+                }
+                taskModel.setIsDone(this.resultSet.getBoolean("is_done"));
+                taskModel.setRepublicUuid(this.resultSet.getString("republic_uuid"));
+                taskModel.setUserUuid(this.resultSet.getString("user_uuid"));
+                tasks.add(taskModel);
+            }
+        } catch (SQLException error) {
+            this.connection.rollback();
+        } finally {
+            return tasks;
         }
     }
 }

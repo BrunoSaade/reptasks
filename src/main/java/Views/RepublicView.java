@@ -4,6 +4,7 @@
  */
 package Views;
 
+import Controllers.MyTasksController;
 import Controllers.RepublicController;
 import Models.FeedbackModel;
 import Models.RepublicModel;
@@ -30,6 +31,7 @@ public class RepublicView extends javax.swing.JFrame {
     private ArrayList<FeedbackModel> feedbacks;
     private ArrayList<UserModel> usersModel;
     private ChooserView chooserView;
+    private MyTasksController myTasksController;
     
     public void visibleContentPanel() {
         this.contentPanel.setVisible(true);
@@ -76,10 +78,10 @@ public class RepublicView extends javax.swing.JFrame {
     }
 
     public void load() {
+        this.republicNameLabel.setText(this.republicModel.getName());
         DefaultTableModel taskTableModel = (DefaultTableModel) this.tasksTable.getModel();
         taskTableModel.setRowCount(0);
         for (TaskModel taskModel : this.tasksModel) {
-//            System.out.println(taskModel);
             String name = "-";
             
             UUID userUuid = taskModel.getUserUuid();
@@ -166,14 +168,15 @@ public class RepublicView extends javax.swing.JFrame {
         searchUserButton = new javax.swing.JButton();
         removeUserButton = new javax.swing.JButton();
         outRepublicButton = new javax.swing.JButton();
+        republicNameLabel = new javax.swing.JLabel();
         menuPanel = new javax.swing.JPanel();
         logoLabel = new javax.swing.JLabel();
         myProfileButton = new javax.swing.JButton();
         logoutButton = new javax.swing.JButton();
         isLoggedInLabel = new javax.swing.JLabel();
         scoreLabel = new javax.swing.JLabel();
-        republicButton = new javax.swing.JButton();
         myProfileButton2 = new javax.swing.JButton();
+        myTasksButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -402,6 +405,9 @@ public class RepublicView extends javax.swing.JFrame {
             }
         });
 
+        republicNameLabel.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        republicNameLabel.setText("REPUBLIC_NAME");
+
         javax.swing.GroupLayout contentPanelLayout = new javax.swing.GroupLayout(contentPanel);
         contentPanel.setLayout(contentPanelLayout);
         contentPanelLayout.setHorizontalGroup(
@@ -411,17 +417,21 @@ public class RepublicView extends javax.swing.JFrame {
                 .addGroup(contentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(tasksPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(usersPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(contentPanelLayout.createSequentialGroup()
-                        .addComponent(outRepublicButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(432, 432, 432)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, contentPanelLayout.createSequentialGroup()
+                        .addComponent(republicNameLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(outRepublicButton)
+                        .addGap(18, 18, 18)))
                 .addContainerGap())
         );
         contentPanelLayout.setVerticalGroup(
             contentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(contentPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(outRepublicButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(6, 6, 6)
+                .addGroup(contentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(outRepublicButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(republicNameLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(tasksPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(usersPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -457,18 +467,17 @@ public class RepublicView extends javax.swing.JFrame {
         scoreLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         scoreLabel.setText("Score: x.xx");
 
-        republicButton.setText("República");
-        republicButton.setEnabled(false);
-        republicButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                republicButtonActionPerformed(evt);
-            }
-        });
-
         myProfileButton2.setText("Entrar/Cadastrar República");
         myProfileButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 myProfileButton2ActionPerformed(evt);
+            }
+        });
+
+        myTasksButton.setText("Minhas Tarefas");
+        myTasksButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                myTasksButtonActionPerformed(evt);
             }
         });
 
@@ -484,8 +493,8 @@ public class RepublicView extends javax.swing.JFrame {
                     .addComponent(myProfileButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(logoutButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(scoreLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(republicButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(myProfileButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(myProfileButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(myTasksButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         menuPanelLayout.setVerticalGroup(
@@ -496,12 +505,12 @@ public class RepublicView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(isLoggedInLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(scoreLabel)
+                .addComponent(scoreLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(46, 46, 46)
                 .addComponent(myProfileButton)
-                .addGap(18, 18, 18)
-                .addComponent(republicButton)
-                .addGap(54, 54, 54)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(myTasksButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(myProfileButton2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(logoutButton)
@@ -565,10 +574,6 @@ public class RepublicView extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Houve um erro ao selecionar o usuário!", "Usuário", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_openUserButtonActionPerformed
-
-    private void republicButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_republicButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_republicButtonActionPerformed
 
     private void addTaskButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addTaskButtonActionPerformed
         this.republicController.openAddTaskView();
@@ -662,6 +667,11 @@ public class RepublicView extends javax.swing.JFrame {
         this.republicController.handleChooserView();
     }//GEN-LAST:event_myProfileButton2ActionPerformed
 
+    private void myTasksButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myTasksButtonActionPerformed
+        this.republicController.openMyTasks();
+        System.out.println(this.republicController.getUserUuid());
+    }//GEN-LAST:event_myTasksButtonActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addTaskButton;
     private javax.swing.JPanel contentPanel;
@@ -673,11 +683,12 @@ public class RepublicView extends javax.swing.JFrame {
     private javax.swing.JPanel menuPanel;
     private javax.swing.JButton myProfileButton;
     private javax.swing.JButton myProfileButton2;
+    private javax.swing.JButton myTasksButton;
     private javax.swing.JButton openTaskButton;
     private javax.swing.JButton openUserButton;
     private javax.swing.JButton outRepublicButton;
     private javax.swing.JButton removeUserButton;
-    private javax.swing.JButton republicButton;
+    private javax.swing.JLabel republicNameLabel;
     private javax.swing.JLabel scoreLabel;
     private javax.swing.JScrollPane scrollPanel;
     private javax.swing.JScrollPane scrollPanel2;

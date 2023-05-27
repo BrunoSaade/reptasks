@@ -487,6 +487,11 @@ public class RepublicController {
         this.myProfileController.view();
     }
     
+    public void openMyTasks() {
+        this.myTasksController.setUserId(user.getUuid());
+        this.myTasksController.view();
+    }
+    
     public void sendFeedback(TaskModel task, String comment, double score) {
         FeedbackModel feedback = this.feedbackDAO.findByTaskUuidAndUserUuid(task.getUuid().toString(), this.user.getUuid().toString());
         

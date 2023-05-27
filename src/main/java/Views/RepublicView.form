@@ -64,9 +64,11 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="tasksPanel" max="32767" attributes="0"/>
                       <Component id="usersPanel" alignment="1" max="32767" attributes="0"/>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="outRepublicButton" max="32767" attributes="0"/>
-                          <EmptySpace min="-2" pref="432" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="republicNameLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="outRepublicButton" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -76,9 +78,12 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="outRepublicButton" max="32767" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="outRepublicButton" alignment="3" max="32767" attributes="0"/>
+                      <Component id="republicNameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="tasksPanel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="usersPanel" min="-2" max="-2" attributes="0"/>
@@ -441,6 +446,14 @@
             <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="outRepublicButton.setOpaque(true);&#xa;outRepublicButton.setBorderPainted(false);"/>
           </AuxValues>
         </Component>
+        <Component class="javax.swing.JLabel" name="republicNameLabel">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Dialog" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="REPUBLIC_NAME"/>
+          </Properties>
+        </Component>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="menuPanel">
@@ -463,8 +476,8 @@
                       <Component id="myProfileButton" alignment="0" max="32767" attributes="0"/>
                       <Component id="logoutButton" alignment="0" max="32767" attributes="0"/>
                       <Component id="scoreLabel" alignment="0" max="32767" attributes="0"/>
-                      <Component id="republicButton" alignment="0" max="32767" attributes="0"/>
                       <Component id="myProfileButton2" alignment="0" max="32767" attributes="0"/>
+                      <Component id="myTasksButton" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -478,12 +491,12 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="isLoggedInLabel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="scoreLabel" min="-2" max="-2" attributes="0"/>
+                  <Component id="scoreLabel" min="-2" pref="14" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                   <Component id="myProfileButton" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="republicButton" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="myTasksButton" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="myProfileButton2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="logoutButton" min="-2" max="-2" attributes="0"/>
@@ -530,21 +543,20 @@
             <Property name="text" type="java.lang.String" value="Score: x.xx"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="republicButton">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Rep&#xfa;blica"/>
-            <Property name="enabled" type="boolean" value="false"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="republicButtonActionPerformed"/>
-          </Events>
-        </Component>
         <Component class="javax.swing.JButton" name="myProfileButton2">
           <Properties>
             <Property name="text" type="java.lang.String" value="Entrar/Cadastrar Rep&#xfa;blica"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="myProfileButton2ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="myTasksButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Minhas Tarefas"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="myTasksButtonActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
