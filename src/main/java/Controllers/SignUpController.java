@@ -17,9 +17,9 @@ import java.util.regex.Pattern;
  * @author Gabriel Barbosa Silva 2211114
  */
 public class SignUpController {
-    private SignInController signInController;
-    private SignUpView signUpView;
-    private UserDAO userDAO;
+    private final SignInController signInController;
+    private final SignUpView signUpView;
+    private final UserDAO userDAO;
     public boolean caduser = false;
     
     public SignUpController(SignInController signInController) {

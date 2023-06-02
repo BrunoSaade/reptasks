@@ -15,10 +15,10 @@ import javax.swing.JOptionPane;
  * @author Gabriel Barbosa Silva 2211114
  */
 public class SignInController {   
-    private SignInView signInView;
-    private SignUpController signUpController;
+    private final SignInView signInView;
+    private final SignUpController signUpController;
     private RepublicController republicController;
-    private UserDAO userDAO;
+    private final UserDAO userDAO;
     
     public SignInController() {
         new UserModel();
@@ -66,7 +66,6 @@ public class SignInController {
         this.republicController.view();
         this.republicController.setUserUuid(user.getUuid().toString());
         this.republicController.load();
-        return;
     }
     
     public void viewDeleteSession() {

@@ -10,7 +10,6 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.UUID;
 import javax.swing.JOptionPane;
 import org.postgresql.util.PGobject;
 import utils.Database;
