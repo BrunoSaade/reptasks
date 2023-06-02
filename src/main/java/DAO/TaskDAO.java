@@ -117,43 +117,6 @@ public class TaskDAO extends Database {
             return true;
         }
     }
-    /*
-     * public UserModel update(UserModel userModel) {
-        try {
-            Timestamp updatedAt = Timestamp.valueOf(LocalDateTime.now());
-            userModel.setUpdatedAt(updatedAt.toLocalDateTime());
-            
-            PGobject userUuid = new PGobject();
-            PGobject republicUuid = new PGobject();
-            
-            userUuid.setType("uuid");
-            userUuid.setValue(userModel.getUuid().toString());
-            
-            republicUuid.setType("uuid");
-            republicUuid.setValue(userModel.getRepublicUuid().toString());
-            
-            this.preparedStatement = this.connection.prepareStatement("UPDATE Users SET name = ?, username = ?, password = ?, republic_uuid = ?, updated_at = ? WHERE uuid = ?");
-            this.preparedStatement.setString(1, userModel.getName());
-            this.preparedStatement.setString(2, userModel.getUsername());
-            this.preparedStatement.setString(3, userModel.getPassword());
-            this.preparedStatement.setObject(4, republicUuid);
-            this.preparedStatement.setTimestamp(5, updatedAt);
-            this.preparedStatement.setObject(6, userUuid);
-            int result = this.preparedStatement.executeUpdate();
-            
-            if (result == 1) {
-                this.connection.commit();
-            } else {
-                this.connection.rollback();
-            }
-        } catch (SQLException error) {
-            System.out.println(error.getMessage());
-            JOptionPane.showMessageDialog(null, "Não foi possível buscar o usuário!", "Banco de dados", JOptionPane.ERROR_MESSAGE);
-        } finally {
-            return userModel;
-        }
-    }
-     */
 
     public TaskModel update(TaskModel taskModel) {
         try {

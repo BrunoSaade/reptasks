@@ -5,12 +5,8 @@
 package Views;
 
 import Controllers.MyTasksController;
-import Controllers.RepublicController;
-import Models.FeedbackModel;
 import Models.TaskModel;
-import Models.UserModel;
 import java.util.ArrayList;
-import java.util.UUID;
 import javax.swing.table.DefaultTableModel;
 
 
@@ -19,17 +15,12 @@ import javax.swing.table.DefaultTableModel;
  * @author gabri
  */
 public class MyTasksView extends javax.swing.JFrame {
-    private RepublicController republicController;
-    private MyTasksController myTasksController;
     private ArrayList<TaskModel> tasksModel;
-    private UserModel userModel;
     
     public void load() {
         DefaultTableModel taskTableModel = (DefaultTableModel) this.tasksTable.getModel();
         taskTableModel.setRowCount(0);
         for (TaskModel taskModel : this.tasksModel) {
-            String name = "-";
-            System.out.println(taskModel.getTitle());
            
             String done = "A Fazer";
             
@@ -49,7 +40,6 @@ public class MyTasksView extends javax.swing.JFrame {
      * Creates new form MyProfileView
      */
     public MyTasksView(MyTasksController myTasksController) {
-        this.myTasksController = myTasksController;
         initComponents();
     }
     

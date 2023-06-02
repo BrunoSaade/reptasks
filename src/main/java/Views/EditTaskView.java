@@ -97,7 +97,7 @@ public class EditTaskView extends javax.swing.JFrame {
         userList = new javax.swing.JList<>();
         editButton = new javax.swing.JButton();
         expiresField = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
+        ExempleLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -125,7 +125,7 @@ public class EditTaskView extends javax.swing.JFrame {
 
         expiresField.setBorder(javax.swing.BorderFactory.createTitledBorder("Expiração / Deadline"));
 
-        jLabel1.setText("Exemplo: 20/06/1997 20:35");
+        ExempleLabel.setText("Exemplo: 20/06/1997 20:35");
 
         javax.swing.GroupLayout contentPanelLayout = new javax.swing.GroupLayout(contentPanel);
         contentPanel.setLayout(contentPanelLayout);
@@ -142,7 +142,7 @@ public class EditTaskView extends javax.swing.JFrame {
                         .addGroup(contentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(expiresField)
                             .addGroup(contentPanelLayout.createSequentialGroup()
-                                .addComponent(jLabel1)
+                                .addComponent(ExempleLabel)
                                 .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
             .addGroup(contentPanelLayout.createSequentialGroup()
@@ -162,7 +162,7 @@ public class EditTaskView extends javax.swing.JFrame {
                     .addGroup(contentPanelLayout.createSequentialGroup()
                         .addComponent(expiresField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1)))
+                        .addComponent(ExempleLabel)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
                 .addComponent(editButton)
                 .addContainerGap())
@@ -221,11 +221,11 @@ public class EditTaskView extends javax.swing.JFrame {
     }//GEN-LAST:event_editButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel ExempleLabel;
     private javax.swing.JPanel contentPanel;
     private javax.swing.JTextArea descriptionArea;
     private javax.swing.JButton editButton;
     private javax.swing.JTextField expiresField;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField titleField;

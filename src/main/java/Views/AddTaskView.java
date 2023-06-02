@@ -21,7 +21,7 @@ public class AddTaskView extends javax.swing.JFrame {
     private ArrayList<UserModel> usersModel;
     
     public void closeTask() {
-        this.dispose();;
+        this.dispose();
     }
     
     public void emptyFields() {
@@ -67,9 +67,9 @@ public class AddTaskView extends javax.swing.JFrame {
         descriptionArea = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
         userList = new javax.swing.JList<>();
-        addButton = new javax.swing.JButton();
+        createTaskButton = new javax.swing.JButton();
         expiresField = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
+        observationLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -87,12 +87,12 @@ public class AddTaskView extends javax.swing.JFrame {
         userList.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane2.setViewportView(userList);
 
-        addButton.setBackground(new java.awt.Color(76, 180, 82));
-        addButton.setForeground(new java.awt.Color(255, 255, 255));
-        addButton.setText("Criar Tarefa");
-        addButton.addActionListener(new java.awt.event.ActionListener() {
+        createTaskButton.setBackground(new java.awt.Color(76, 180, 82));
+        createTaskButton.setForeground(new java.awt.Color(255, 255, 255));
+        createTaskButton.setText("Criar Tarefa");
+        createTaskButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addButtonActionPerformed(evt);
+                createTaskButtonActionPerformed(evt);
             }
         });
 
@@ -103,7 +103,7 @@ public class AddTaskView extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Exemplo: 20/06/1997 20:35");
+        observationLabel.setText("Exemplo: 20/06/1997 20:35");
 
         javax.swing.GroupLayout contentPanelLayout = new javax.swing.GroupLayout(contentPanel);
         contentPanel.setLayout(contentPanelLayout);
@@ -120,12 +120,12 @@ public class AddTaskView extends javax.swing.JFrame {
                         .addGroup(contentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(expiresField)
                             .addGroup(contentPanelLayout.createSequentialGroup()
-                                .addComponent(jLabel1)
+                                .addComponent(observationLabel)
                                 .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
             .addGroup(contentPanelLayout.createSequentialGroup()
                 .addGap(160, 160, 160)
-                .addComponent(addButton, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(createTaskButton, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(171, Short.MAX_VALUE))
         );
         contentPanelLayout.setVerticalGroup(
@@ -140,14 +140,14 @@ public class AddTaskView extends javax.swing.JFrame {
                     .addGroup(contentPanelLayout.createSequentialGroup()
                         .addComponent(expiresField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1)))
+                        .addComponent(observationLabel)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
-                .addComponent(addButton)
+                .addComponent(createTaskButton)
                 .addContainerGap())
         );
 
-        addButton.setOpaque(true);
-        addButton.setBorderPainted(false);
+        createTaskButton.setOpaque(true);
+        createTaskButton.setBorderPainted(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -169,7 +169,7 @@ public class AddTaskView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
+    private void createTaskButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createTaskButtonActionPerformed
         try {
             
             String title = this.titleField.getText().trim();
@@ -196,20 +196,20 @@ public class AddTaskView extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Dados inválido", "Erro", JOptionPane.ERROR_MESSAGE);
             return;
         }
-    }//GEN-LAST:event_addButtonActionPerformed
+    }//GEN-LAST:event_createTaskButtonActionPerformed
 
     private void expiresFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_expiresFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_expiresFieldActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton addButton;
     private javax.swing.JPanel contentPanel;
+    private javax.swing.JButton createTaskButton;
     private javax.swing.JTextArea descriptionArea;
     private javax.swing.JTextField expiresField;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel observationLabel;
     private javax.swing.JTextField titleField;
     private javax.swing.JList<String> userList;
     // End of variables declaration//GEN-END:variables

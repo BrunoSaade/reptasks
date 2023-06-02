@@ -38,12 +38,12 @@ public class ChooserView extends javax.swing.JFrame {
         createRepublicPanel = new javax.swing.JPanel();
         createNameRepublicField = new javax.swing.JTextField();
         createRepublicPasswordField = new javax.swing.JPasswordField();
-        createNewRepublicPasswordField = new javax.swing.JPasswordField();
+        createRepublicConfirmPasswordField = new javax.swing.JPasswordField();
         createRepublicButton = new javax.swing.JButton();
         enterRepublicPanel = new javax.swing.JPanel();
         enterNameRepublicField = new javax.swing.JTextField();
         enterPasswordRepublicField = new javax.swing.JPasswordField();
-        enterREpublicButton = new javax.swing.JButton();
+        enterRepublicButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -56,7 +56,7 @@ public class ChooserView extends javax.swing.JFrame {
 
         createRepublicPasswordField.setBorder(javax.swing.BorderFactory.createTitledBorder("Senha"));
 
-        createNewRepublicPasswordField.setBorder(javax.swing.BorderFactory.createTitledBorder("Confirmar Senha"));
+        createRepublicConfirmPasswordField.setBorder(javax.swing.BorderFactory.createTitledBorder("Confirmar Senha"));
 
         createRepublicButton.setBackground(new java.awt.Color(76, 180, 82));
         createRepublicButton.setForeground(new java.awt.Color(255, 255, 255));
@@ -76,7 +76,7 @@ public class ChooserView extends javax.swing.JFrame {
                 .addGroup(createRepublicPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(createNameRepublicField)
                     .addComponent(createRepublicPasswordField)
-                    .addComponent(createNewRepublicPasswordField)
+                    .addComponent(createRepublicConfirmPasswordField)
                     .addGroup(createRepublicPanelLayout.createSequentialGroup()
                         .addComponent(createRepublicButton, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 355, Short.MAX_VALUE)))
@@ -90,7 +90,7 @@ public class ChooserView extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(createRepublicPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(createNewRepublicPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(createRepublicConfirmPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(createRepublicButton)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -105,12 +105,12 @@ public class ChooserView extends javax.swing.JFrame {
 
         enterPasswordRepublicField.setBorder(javax.swing.BorderFactory.createTitledBorder("Senha da República"));
 
-        enterREpublicButton.setBackground(new java.awt.Color(76, 180, 82));
-        enterREpublicButton.setForeground(new java.awt.Color(255, 255, 255));
-        enterREpublicButton.setText("Entrar na República");
-        enterREpublicButton.addActionListener(new java.awt.event.ActionListener() {
+        enterRepublicButton.setBackground(new java.awt.Color(76, 180, 82));
+        enterRepublicButton.setForeground(new java.awt.Color(255, 255, 255));
+        enterRepublicButton.setText("Entrar na República");
+        enterRepublicButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                enterREpublicButtonActionPerformed(evt);
+                enterRepublicButtonActionPerformed(evt);
             }
         });
 
@@ -124,7 +124,7 @@ public class ChooserView extends javax.swing.JFrame {
                     .addComponent(enterNameRepublicField)
                     .addComponent(enterPasswordRepublicField)
                     .addGroup(enterRepublicPanelLayout.createSequentialGroup()
-                        .addComponent(enterREpublicButton, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(enterRepublicButton, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -136,12 +136,12 @@ public class ChooserView extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(enterPasswordRepublicField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(enterREpublicButton)
+                .addComponent(enterRepublicButton)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        enterREpublicButton.setOpaque(true);
-        enterREpublicButton.setBorderPainted(false);
+        enterRepublicButton.setOpaque(true);
+        enterRepublicButton.setBorderPainted(false);
 
         javax.swing.GroupLayout contentPanelLayout = new javax.swing.GroupLayout(contentPanel);
         contentPanel.setLayout(contentPanelLayout);
@@ -187,28 +187,28 @@ public class ChooserView extends javax.swing.JFrame {
     private void createRepublicButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createRepublicButtonActionPerformed
         String name = this.createNameRepublicField.getText();
         String password = String.valueOf(this.createRepublicPasswordField.getPassword());
-        String passwordConfirm = String.valueOf(this.createNewRepublicPasswordField.getPassword());
+        String passwordConfirm = String.valueOf(this.createRepublicConfirmPasswordField.getPassword());
         
         this.republicController.createRepublic(name, password, passwordConfirm);
     }//GEN-LAST:event_createRepublicButtonActionPerformed
 
-    private void enterREpublicButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterREpublicButtonActionPerformed
+    private void enterRepublicButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterRepublicButtonActionPerformed
         String name = this.enterNameRepublicField.getText();
         String password = String.valueOf(this.enterPasswordRepublicField.getPassword());
         
         this.republicController.enterRepublic(name, password);
-    }//GEN-LAST:event_enterREpublicButtonActionPerformed
+    }//GEN-LAST:event_enterRepublicButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel contentPanel;
     private javax.swing.JTextField createNameRepublicField;
-    private javax.swing.JPasswordField createNewRepublicPasswordField;
     private javax.swing.JButton createRepublicButton;
+    private javax.swing.JPasswordField createRepublicConfirmPasswordField;
     private javax.swing.JPanel createRepublicPanel;
     private javax.swing.JPasswordField createRepublicPasswordField;
     private javax.swing.JTextField enterNameRepublicField;
     private javax.swing.JPasswordField enterPasswordRepublicField;
-    private javax.swing.JButton enterREpublicButton;
+    private javax.swing.JButton enterRepublicButton;
     private javax.swing.JPanel enterRepublicPanel;
     // End of variables declaration//GEN-END:variables
 }

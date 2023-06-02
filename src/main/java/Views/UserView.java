@@ -13,12 +13,9 @@ import Models.UserModel;
  * @author gabri
  */
 public class UserView extends javax.swing.JFrame {
-    private RepublicController republicController;
-    private UserModel user;
     private RepublicModel republic;
 
     public void setUser(UserModel user, RepublicModel republic) {
-        this.user = user;
         this.republic = republic;
 
         this.nameLabel.setText(user.getName());
@@ -34,7 +31,6 @@ public class UserView extends javax.swing.JFrame {
      * Creates new form UserView
      */
     public UserView(RepublicController republicController) {
-        this.republicController = republicController;
         initComponents();
     }
 

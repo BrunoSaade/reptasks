@@ -19,15 +19,12 @@ import java.util.UUID;
  * @author gabri
  */
 public class MyTasksController {
-    private String userUuid;
     private RepublicController republicController;
     private MyTasksView tasksView;
     private ArrayList<TaskModel> tasks;
     private TaskDAO taskDAO;
     private RepublicModel republic;
     private UUID userId;
-    private UserDAO userDAO;
-    private UserModel user;
     
     public MyTasksController(RepublicController republicController) {
         this.republicController = republicController;
@@ -41,10 +38,7 @@ public class MyTasksController {
     }
     
     public void load() {
-//        this.tasks = this.taskDAO.findAllTasksByRepublicUuid("19f5380e-2613-49e5-bafb-1847f089c849");
-        System.out.println("load do controller");
         this.tasks =  this.taskDAO.getAllTasksOfUser(this.userId.toString());
-        
         this.tasksView.setTasks(tasks);
         this.tasksView.load();
     }

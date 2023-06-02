@@ -7,7 +7,6 @@ package Controllers;
 import DAO.UserDAO;
 import Models.UserModel;
 import Views.SignInView;
-import com.password4j.Hash;
 import com.password4j.Password;
 import javax.swing.JOptionPane;
 
@@ -19,11 +18,10 @@ public class SignInController {
     private SignInView signInView;
     private SignUpController signUpController;
     private RepublicController republicController;
-    private UserModel userModel;
     private UserDAO userDAO;
     
     public SignInController() {
-        this.userModel = new UserModel();
+        new UserModel();
         this.signInView = new SignInView(this);
         this.signUpController = new SignUpController(this);
         this.republicController = new RepublicController(this);

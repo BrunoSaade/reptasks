@@ -59,17 +59,6 @@ public class FeedbackDAO extends Database {
             this.preparedStatement.setString(1, feedback.getComment());
             this.preparedStatement.setDouble(2, feedback.getScore());
             
-            /*PGobject userUuidObject = new PGobject();
-            userUuidObject.setType("uuid");
-            userUuidObject.setValue(feedback.getUserUuid().toString());
-            
-            PGobject taskUuidObject = new PGobject();
-            taskUuidObject.setType("uuid");
-            taskUuidObject.setValue(feedback.getTaskUuid().toString());
-            
-            this.preparedStatement.setObject(3, userUuidObject);
-            this.preparedStatement.setObject(4, taskUuidObject);*/
-            
             PGobject feedbackUuidObject = new PGobject();
             feedbackUuidObject.setType("uuid");
             feedbackUuidObject.setValue(feedback.getUuid().toString());

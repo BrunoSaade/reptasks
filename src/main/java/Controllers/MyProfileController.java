@@ -86,12 +86,7 @@ public class MyProfileController {
     }
     
     public void view() {
-        this.load();
         this.myProfileView.setVisible(true);
-    }
-    
-    public void load() {
-        
     }
     
     public void close() {

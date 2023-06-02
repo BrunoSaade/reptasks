@@ -64,7 +64,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="expiresField" max="32767" attributes="0"/>
                               <Group type="102" attributes="0">
-                                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="observationLabel" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -74,7 +74,7 @@
               </Group>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="160" max="-2" attributes="0"/>
-                  <Component id="addButton" min="-2" pref="236" max="-2" attributes="0"/>
+                  <Component id="createTaskButton" min="-2" pref="236" max="-2" attributes="0"/>
                   <EmptySpace pref="171" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -91,11 +91,11 @@
                       <Group type="102" attributes="0">
                           <Component id="expiresField" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                          <Component id="observationLabel" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace pref="93" max="32767" attributes="0"/>
-                  <Component id="addButton" min="-2" max="-2" attributes="0"/>
+                  <Component id="createTaskButton" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -157,7 +157,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="addButton">
+        <Component class="javax.swing.JButton" name="createTaskButton">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="52" green="b4" red="4c" type="rgb"/>
@@ -168,10 +168,10 @@
             <Property name="text" type="java.lang.String" value="Criar Tarefa"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addButtonActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="createTaskButtonActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="addButton.setOpaque(true);&#xa;addButton.setBorderPainted(false);"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="createTaskButton.setOpaque(true);&#xa;createTaskButton.setBorderPainted(false);"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JTextField" name="expiresField">
@@ -186,7 +186,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="expiresFieldActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel1">
+        <Component class="javax.swing.JLabel" name="observationLabel">
           <Properties>
             <Property name="text" type="java.lang.String" value="Exemplo: 20/06/1997 20:35"/>
           </Properties>

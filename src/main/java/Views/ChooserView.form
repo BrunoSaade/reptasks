@@ -94,7 +94,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="createNameRepublicField" max="32767" attributes="0"/>
                           <Component id="createRepublicPasswordField" max="32767" attributes="0"/>
-                          <Component id="createNewRepublicPasswordField" alignment="0" max="32767" attributes="0"/>
+                          <Component id="createRepublicConfirmPasswordField" alignment="0" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="createRepublicButton" min="-2" pref="181" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="355" max="32767" attributes="0"/>
@@ -112,7 +112,7 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="createRepublicPasswordField" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="createNewRepublicPasswordField" min="-2" max="-2" attributes="0"/>
+                      <Component id="createRepublicConfirmPasswordField" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="createRepublicButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
@@ -139,7 +139,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JPasswordField" name="createNewRepublicPasswordField">
+            <Component class="javax.swing.JPasswordField" name="createRepublicConfirmPasswordField">
               <Properties>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
@@ -185,7 +185,7 @@
                           <Component id="enterNameRepublicField" max="32767" attributes="0"/>
                           <Component id="enterPasswordRepublicField" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="enterREpublicButton" min="-2" pref="192" max="-2" attributes="0"/>
+                              <Component id="enterRepublicButton" min="-2" pref="192" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -201,7 +201,7 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="enterPasswordRepublicField" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="enterREpublicButton" min="-2" max="-2" attributes="0"/>
+                      <Component id="enterRepublicButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -226,7 +226,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="enterREpublicButton">
+            <Component class="javax.swing.JButton" name="enterRepublicButton">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="52" green="b4" red="4c" type="rgb"/>
@@ -237,10 +237,10 @@
                 <Property name="text" type="java.lang.String" value="Entrar na Rep&#xfa;blica"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="enterREpublicButtonActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="enterRepublicButtonActionPerformed"/>
               </Events>
               <AuxValues>
-                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="enterREpublicButton.setOpaque(true);&#xa;enterREpublicButton.setBorderPainted(false);"/>
+                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="enterRepublicButton.setOpaque(true);&#xa;enterRepublicButton.setBorderPainted(false);"/>
               </AuxValues>
             </Component>
           </SubComponents>

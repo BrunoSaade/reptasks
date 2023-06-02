@@ -5,7 +5,6 @@
 package Views;
 
 import Controllers.MyProfileController;
-import Controllers.RepublicController;
 import Models.FeedbackModel;
 import Models.RepublicModel;
 import Models.TaskModel;
@@ -20,14 +19,12 @@ import javax.swing.table.DefaultTableModel;
  */
 public class MyProfileView extends javax.swing.JFrame {
     private UserModel profile; 
-    private ArrayList<FeedbackModel> feedbacks;
     private MyProfileController myProfileController;
     
     public void setProfile(UserModel user, RepublicModel republic, ArrayList<FeedbackModel> feedbacks) {
         this.profile = user;
         this.nameField.setText(user.getName());
         this.usernameField.setText(user.getUsername());
-        this.feedbacks = feedbacks;
         if (republic != null) {
             this.republicLabel.setText("República: " + republic.getName());
         } else {

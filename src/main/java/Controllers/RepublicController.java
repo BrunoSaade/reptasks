@@ -23,7 +23,6 @@ import com.password4j.Password;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 
 /**
  *
@@ -138,7 +137,6 @@ public class RepublicController {
             
             if (this.user.getRepublicUuid() == null) {
                 this.chooserView.setVisible(true);
-                //this.republicView.load();
                 this.republicView.invisibleContentPanel();
                 this.republicView.setNoRepublic();
                 this.republicView.handleButtonState(true);
@@ -214,7 +212,6 @@ public class RepublicController {
             this.load();
 
             JOptionPane.showMessageDialog(null, "República criada com sucesso!", "República", JOptionPane.INFORMATION_MESSAGE);
-            //this.republicView.viewTasksView();
             return;
         }
         

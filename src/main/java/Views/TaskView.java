@@ -21,7 +21,6 @@ public class TaskView extends javax.swing.JFrame {
     private UserModel userModel;
     
     private FeedbackModel feedbackModel;
-    private boolean isResponsible;
     
     public void closeView() {
         this.dispose();

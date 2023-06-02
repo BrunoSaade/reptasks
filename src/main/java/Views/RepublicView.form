@@ -476,7 +476,7 @@
                       <Component id="myProfileButton" alignment="0" max="32767" attributes="0"/>
                       <Component id="logoutButton" alignment="0" max="32767" attributes="0"/>
                       <Component id="scoreLabel" alignment="0" max="32767" attributes="0"/>
-                      <Component id="myProfileButton2" alignment="0" max="32767" attributes="0"/>
+                      <Component id="enterLoginRepublicButton" alignment="0" max="32767" attributes="0"/>
                       <Component id="myTasksButton" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -497,7 +497,7 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="myTasksButton" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="myProfileButton2" min="-2" max="-2" attributes="0"/>
+                  <Component id="enterLoginRepublicButton" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="logoutButton" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
@@ -509,7 +509,7 @@
         <Component class="javax.swing.JLabel" name="logoLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Agency FB" size="48" style="1"/>
+              <Font name="Agency FB" size="36" style="1"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="REPTASKS"/>
@@ -543,12 +543,12 @@
             <Property name="text" type="java.lang.String" value="Score: x.xx"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="myProfileButton2">
+        <Component class="javax.swing.JButton" name="enterLoginRepublicButton">
           <Properties>
             <Property name="text" type="java.lang.String" value="Entrar/Cadastrar Rep&#xfa;blica"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="myProfileButton2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="enterLoginRepublicButtonActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="myTasksButton">
