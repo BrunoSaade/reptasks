@@ -138,14 +138,11 @@ public class RepublicController {
             if (this.user.getRepublicUuid() == null) {
                 this.chooserView.setVisible(true);
                 this.republicView.invisibleContentPanel();
-                this.republicView.setNoRepublic();
                 this.republicView.handleButtonState(true);
                 return;
             }
             
             this.republicView.handleButtonState(false);
-            
-            this.republicView.setRepublic();
             
             this.republicView.visibleContentPanel();
             

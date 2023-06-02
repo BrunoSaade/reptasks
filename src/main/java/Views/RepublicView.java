@@ -36,14 +36,6 @@ public class RepublicView extends javax.swing.JFrame {
         this.contentPanel.setVisible(false);
     }
     
-    public void setNoRepublic() {
-        //this.myTasksButton.setEnabled(false);
-    }
-    
-    public void setRepublic() {
-//        this.myTasksButton.setEnabled(true);
-    }
-    
     public void setScore(double score) {
         this.scoreLabel.setText("Score: " + String.valueOf(score));
     }
@@ -133,6 +125,8 @@ public class RepublicView extends javax.swing.JFrame {
     public RepublicView(RepublicController republicController) {
         this.republicController = republicController;
         initComponents();
+        this.searchTaskField.setToolTipText("Digite o nome da tarefa");
+        this.searchUserField.setToolTipText("Digite o nome do usuário");
     }
 
     /**

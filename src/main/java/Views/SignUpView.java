@@ -19,6 +19,10 @@ public class SignUpView extends javax.swing.JFrame {
     public SignUpView(SignUpController signUpController) {
         this.signUpController = signUpController;
         initComponents();
+        this.nameField.setToolTipText("Digite seu nome");
+        this.usernameField.setToolTipText("Digite seu nome de usuário");
+        this.passwordField.setToolTipText("<html> Digite sua senha<br/>Sua senha deve possuir:<br/>8 dígitos<br/>1 letra minúscula<br/>1 letra maiscúla<br/></html>");
+        this.passwordConfirmField.setToolTipText("Confirme sua senha");
     }
     
     public void emptyFields() {
@@ -97,6 +101,18 @@ public class SignUpView extends javax.swing.JFrame {
         passwordLabel.setText("Senha:");
 
         passwordConfirmLabel.setText("Confirmar senha:");
+
+        passwordField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passwordFieldActionPerformed(evt);
+            }
+        });
+
+        nameField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nameFieldActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Nome:");
 
@@ -190,6 +206,14 @@ public class SignUpView extends javax.swing.JFrame {
     private void usernameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_usernameFieldActionPerformed
+
+    private void nameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nameFieldActionPerformed
+
+    private void passwordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passwordFieldActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;

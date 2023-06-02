@@ -50,6 +50,10 @@ public class MyProfileView extends javax.swing.JFrame {
     public MyProfileView(MyProfileController myProfileController) {
         this.myProfileController = myProfileController;
         initComponents();
+        this.nameField.setToolTipText("Digite seu nome");
+        this.oldPasswordField.setToolTipText("Digite sua senha atual");
+        this.newPasswordField.setToolTipText("Digite sua senha nova");
+        this.confirmNewPasswordField.setToolTipText("Confirme sua senha nova");
     }
 
     /**

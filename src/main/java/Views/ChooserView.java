@@ -23,6 +23,12 @@ public class ChooserView extends javax.swing.JFrame {
     public ChooserView(RepublicController republicController) {
         this.republicController = republicController;
         initComponents();
+        this.createNameRepublicField.setToolTipText("Digite o nome da república");
+        this.createRepublicPasswordField.setToolTipText("Digite a senha da república");
+        this.createRepublicConfirmPasswordField.setToolTipText("Confirme a senha");
+        this.enterNameRepublicField.setToolTipText("Digite o nome da república");
+        this.enterPasswordRepublicField.setToolTipText("Digite a senha");
+        
     }
 
     /**

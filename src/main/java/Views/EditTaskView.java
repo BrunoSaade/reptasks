@@ -78,6 +78,9 @@ public class EditTaskView extends javax.swing.JFrame {
     public EditTaskView(RepublicController republicController) {
         this.republicController = republicController;
         initComponents();
+        this.titleField.setToolTipText("Digite o título da tarefa");
+        this.descriptionArea.setToolTipText("Digite a descrição da tarefa");
+        this.expiresField.setToolTipText("<html>00/00/0000 00:00<br/>Dia/Mês/Ano Hora:Minuto</html>");
     }
 
     /**

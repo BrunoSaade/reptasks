@@ -101,6 +101,8 @@ public class TaskView extends javax.swing.JFrame {
     public TaskView(RepublicController republicController) {
         this.republicController = republicController;
         initComponents();
+        this.commentArea.setToolTipText("Digite seu comentário");
+        this.scoreSpinner.setToolTipText("Score: 0 - 10");
     }
 
     /**

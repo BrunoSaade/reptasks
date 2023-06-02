@@ -19,6 +19,8 @@ public class SignInView extends javax.swing.JFrame {
     public SignInView(SignInController signInController) {
         this.signInController = signInController;
         initComponents();
+        this.usernameField.setToolTipText("Digite seu usuário");
+        this.passwordField.setToolTipText("Digite sua senha");
     }
     
     public void emptyFields() {
